@@ -8,11 +8,34 @@
 	<meta name="generator" content="TextMate http://macromates.com/">
 	<meta name="author" content="Eric Gelinas">
 	<!-- Date: 2009-12-08 -->
+	
+	<style>
+		#form_output{
+			border:dotted #333 1px;
+			background-color:#eee;
+		}
+	</style>
 </head>
 <body>
 	<h1>Continuous Integration Prototype</h1>
-	<p>This is a prototype of continuous integration using <a href="http://developer.yahoo.com/yui/3/test/">YUI 3 Test</a>, <a href="http://seleniumhq.org/">Selenium</a>, and <a href="http://hudson-ci.org/">Hudson</a>. This is inspired by a <a href="">speech</a> from <a href="http://developer.yahoo.com/yui/theater/video.php?v=adams-yuiconf2009-testing">Ron Adams</a> at <a href="http://yuilibrary.com/yuiconf2009/">YUI Conf 2009</a></p>
+	<p>This is a prototype of continuous integration using <a href="http://developer.yahoo.com/yui/3/test/">YUI 3 Test</a>, <a href="http://seleniumhq.org/">Selenium</a>, and <a href="http://hudson-ci.org/">Hudson</a>. This is inspired by a <a href="http://developer.yahoo.com/yui/theater/video.php?v=adams-yuiconf2009-testing">speech</a> from <strong>Ron Adams</strong> at <a href="http://yuilibrary.com/yuiconf2009/">YUI Conf 2009</a></p>
 	
+	<h2>Testable Feature</h2>
+	<h3>Form:</h3>
+	<div>
+		<form name="testableform" id="testableform" action="javascript:(function(){submitForm();})();">
+			<input type="text" name="textfield" value="Default Test Value" />
+			<button>Test Me!</button>
+		</form>
+	</div>
+	<h3>Output:</h3>
+	<div id="form_output">No output.</div>
 	
+	<script>
+		function submitForm() {
+				document.getElementById('form_output').innerHTML=document.getElementById('testableform').textfield.value;
+		
+		}
+	</script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-This is a continuous integration prototype for StandardPixel websites.
+This is a prototype of continuous integration using YUI 3 Test, Selenium, and Hudson. This is inspired by a speech from Ron Adams at YUI Conf 2009
